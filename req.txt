@@ -1,0 +1,19 @@
+jpmorgan_UK
+jpmorganfunds
+jpmam_ukadviser
+
+1. blackrock
+2. vangaurd
+3. allianz
+4. axa
+5. scroders
+6. Standard life Aberden
+7. Goldman Scahs Group
+8. Prudential
+9. UBS
+10. Fidelity
+
+1. Get all data as csv
+2. Accounts who follow jp
+
+Company name and titles

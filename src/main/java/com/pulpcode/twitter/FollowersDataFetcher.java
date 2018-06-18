@@ -18,7 +18,7 @@ public class FollowersDataFetcher {
             followersList = twitter.getFollowersList("jpmorgan_UK",cursor,count);
             for(User user : followersList)
             {
-                System.out.println(user.getId() + " " + user.getScreenName());
+                System.out.println(user.getId() + "," + user.getScreenName());
                 long nestedCursor = -1;
                 int nestedCount = 200;
                 PagableResponseList<User> followersOfFollowers = twitter.getFollowersList(user.getScreenName(),nestedCursor,nestedCount);
@@ -27,14 +27,13 @@ public class FollowersDataFetcher {
                     followersOfFollowers = twitter.getFollowersList(user.getScreenName(),nestedCursor,nestedCount);
                     for(User followerOfFollwer : followersOfFollowers)
                     {
-                        System.out.println("\t\t\t\t"+followerOfFollwer.getId() + " " + followerOfFollwer.getScreenName());
+                        System.out.println("\t\t\t\t"+followerOfFollwer.getId() + "," + followerOfFollwer.getScreenName());
                     }
                     Thread.sleep(1000*2);
                 }
             }
             Thread.sleep(1000*5);
         }
-
     }
 
     private static void storeAccessToken(int useId, AccessToken accessToken)

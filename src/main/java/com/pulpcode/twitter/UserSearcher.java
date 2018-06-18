@@ -9,14 +9,11 @@ public class UserSearcher
     public static void main(String[] args) throws TwitterException, IOException
     {
         Twitter twitter = TwitterLoginUtil.logIntoTwitter();
-        ResponseList<User>  responseList = twitter.searchUsers("jpmc",50);
+        ResponseList<User>  responseList = twitter.searchUsers("jpmorgan",50);
         System.out.println("Size Returned = " + responseList.size());
         for (User user: responseList)
         {
             System.out.println(user.getId() + " " + user.getScreenName());
         }
-
-        //System.out.println("Qwury result contains " + queryResult.getCount());
-
     }
 }
